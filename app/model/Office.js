@@ -1,35 +1,15 @@
 Ext.define('Ds.model.Office', {
 	extend: 'Ext.data.Model',
 	fields: [{
-		name: 'id'
+		name: 'id',
+                type: 'int'
 	},{
-		name: 'name'
+		name: 'city'
 	},{
-		name: 'estTime'
-	},{
-		name: 'allocTime'
-	},{
-		name: 'desc'
-	},{
-		name: 'dueDate'
+		name: 'stateId'
 	}],
-	fooBar: function(){
-	
-	}
-/*
-	proxy: {
-		type: 'ajax',
-		method: 'POST',
-		api: {
-			load: '/data/task/fetch',
-			create: '/data/task/create',
-			destroy: '/data/task/delete',
-			save: '/data/task/update'
-		},
-		reader: {
-			type: 'json',
-			root: 'results'
-		}
-	}
-*/
+        validations: [{
+            type: 'inclusion', field: 'stateId', list: Ext.stateIds
+        }]
+    
 });
