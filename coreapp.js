@@ -17,6 +17,7 @@ Ext.application({
 	name: 'Ds',
 	autoCreateViewport: true,
 	models: ['Deal','Agent','Client','Office','Org','Property'],
+        controllers: ['Boot'],
 	launch: function() {
 
 	}
