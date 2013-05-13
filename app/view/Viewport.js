@@ -6,7 +6,8 @@ Ext.define('Ds.view.Viewport', {
 	},
 	items: [Ext.create('Ds.view.viewport.OrgTree',{
 		region: 'west',
-		width: 200
+		width: 320,
+                split: true
 	}),Ext.create('Ds.view.viewport.Tabs',{
 		region: 'center'
 	})]
