@@ -1,27 +1,62 @@
 Ext.define('Ds.model.Deal', {
     extend: 'Ext.data.Model',
     fields: [{
-        name: 'id'
+        name: 'id', type: 'int'
     },{
-        name: 'buyerId'
+        name: 'seller_price', type: 'float'
     },{
-        name: 'sellerId'
+        name: 'deal_stage'        
     },{
-        name: 'agentId'        
+        name: 'created_date', type: 'date', dateFormat: 'Y-m-d'
     },{
-        name: 'propertyId'
+        name: 'buyer_id'
     },{
-        name: 'sellerPrice'
+        name: 'buyer_first_name'
     },{
-        name: 'dealStage'
+        name: 'buyer_last_name'
     },{
-        name: 'createdDate'
+        name: 'buyer_company_name'
     },{
-        name: 'offeredDate'
+        name: 'buyer_label'
     },{
-        name: 'closedDate'
-    }],
-    validations: [{
-        type: 'inclusion', field: 'dealStage', list: ['OPENED','OFFERED','CLOSED']
+        name: 'owner_id'
+    },{
+        name: 'owner_first_name'
+    },{
+        name: 'owner_last_name'
+    },{
+        name: 'owner_company_name'
+    },{
+        name: 'owner_label',
+        convert: function(v,r){
+            var firstName = r.get('owner_first_name');
+            var lastName = r.get('owner_last_name');
+            var companyName = r.get('owner_company_name');
+
+            if( companyName ){
+                return companyName;
+            } else if( firstName && lastName ){
+                return lastName + ', ' + firstName;
+            } else {
+                return lastName + firstName;                
+            }
+        }
+    },{
+        name: 'agent_id'
+    },{
+        name: 'agent_first_name'
+    },{
+        name: 'agent_last_name'
+    },{
+        name: 'agent_label', type: 'string'
+    },{
+        name: 'agent_title'
+    },{
+        name: 'agent_phone_number', type: 'string'
+    },{
+        name: 'acres', type: 'int'
+    },{
+        name: 'appraised_value', type: 'float'
     }]
 });
+

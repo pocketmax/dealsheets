@@ -1,4 +1,4 @@
-<!DOCTYPE>
+<!doctype html>
 <html>
         <head>
         <title>Dealsheets</title>
@@ -6,11 +6,18 @@
         <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
         <link rel="stylesheet" type="text/css" href="/js/extjs/resources/css/ext-all.css"/>
         <script src="/js/extjs/ext-all-debug.js"></script>
+        <script src="/js/socket.io/current/client/socket.io.js"></script>
         <script src="coreapp.js"></script>
         <style>
             .icon-office { background-image: url(/icons/building.png) !important; background-repeat: no-repeat; }
             .icon-corp { background-image: url(/icons/world.png) !important; background-repeat: no-repeat; }
             .icon-agent { background-image: url(/icons/user.png) !important; background-repeat: no-repeat; }
+
+            .acres-bad-cell .acres-cell {
+                background-color: red;
+                color: white;
+            }
+
         </style>
         </head>
 

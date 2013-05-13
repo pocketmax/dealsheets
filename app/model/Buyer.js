@@ -1,4 +1,4 @@
-Ext.define('Ds.model.Client', {
+Ext.define('Ds.model.Buyer', {
     require: 'Ds.model.User',
     extend: 'Ds.model.User'
 });
